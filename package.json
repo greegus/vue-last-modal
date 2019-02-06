@@ -1,17 +1,40 @@
 {
-  "name": "vlm",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue-last-modal",
+  "description": "Minimalistic promise-based, programmatically-opening & stacking modal plugin for Vue.js.",
+  "version": "1.0.0",
+  "main": "dist/last-modal.umd.min.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greegus/vue-last-modal.git"
+  },
+  "keywords": [
+    "vue",
+    "modal",
+    "plugin",
+    "vuejs",
+    "dialog",
+    "stacking",
+    "promise",
+    "component",
+    "web"
+  ],
+  "author": "Matus Duchon",
+  "license": "MIT",
+  "homepage": "https://github.com/greegus/vue-last-modal#readme",
+  "bugs": {
+    "url": "https://github.com/greegus/vue-last-modal/issues"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build --target lib --name last-modal src/last-modal.js"
   },
   "dependencies": {
-    "vue": "^2.5.22"
+    "vue": "^2.5.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.1",
     "@vue/cli-service": "^3.0.1",
-    "vue-template-compiler": "^2.5.21"
+    "postcss-nested": "^4.1.1",
+    "vue-template-compiler": "^2.5.0"
   }
 }

@@ -128,7 +128,7 @@ export default {
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   height: 100vh;
   width: 100vw;

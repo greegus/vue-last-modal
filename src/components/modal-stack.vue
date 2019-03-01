@@ -20,11 +20,14 @@
 </template>
 
 <script>
+import LastModal from '../last-modal'
+
 export default {
   name: "modal-stack",
 
   data() {
     return {
+      sequence: 1,
       modals: []
     }
   },
@@ -39,7 +42,9 @@ export default {
     open(modal) {
       document.activeElement && document.activeElement.blur()
 
-      this.modals.push(modal)
+      this.modals.push({
+        ...modal, id: this.sequence++
+      })
     },
 
     close(modal, result = undefined) {
@@ -87,18 +92,18 @@ export default {
     document.body.appendChild(this.$el)
     document.addEventListener("keydown", this.closeByEscKey)
 
-    this.$root.$on("lastModal.open", this.open)
-    this.$root.$on("lastModal.close", this.close)
-    this.$root.$on("lastModal.closeTop", this.closeTop)
+    LastModal.bus.$on("open", this.open)
+    LastModal.bus.$on("close", this.close)
+    LastModal.bus.$on("closeTop", this.closeTop)
   },
 
   destroyed() {
     document.body.removeChild(this.$el)
     document.removeEventListener("keydown", this.closeByEscKey)
 
-    this.$root.$off("lastModal.open", this.open)
-    this.$root.$off("lastModal.close", this.close)
-    this.$root.$off("lastModal.closeTop", this.closeTop)
+    LastModal.bus.$off("open", this.open)
+    LastModal.bus.$off("close", this.close)
+    LastModal.bus.$off("closeTop", this.closeTop)
   }
 }
 </script>
@@ -156,23 +161,23 @@ export default {
 
 /* animations */
 
-.modal-enter-active,
-.modal-leave-active {
+.ModalStack__modal-enter-active,
+.ModalStack__modal-leave-active {
   transition: opacity 0.25s;
 }
 
-.modal-enter,
-.modal-leave-to {
+.ModalStack__modal-enter,
+.ModalStack__modal-leave-to {
   opacity: 0;
 }
 
-.backdrop-enter-active,
-.backdrop-leave-active {
+.ModalStack__backdrop-enter-active,
+.ModalStack__backdrop-leave-active {
   transition: opacity 0.25s;
 }
 
-.backdrop-enter,
-.backdrop-leave-to {
+.ModalStack__backdrop-enter,
+.ModalStack__backdrop-leave-to {
   opacity: 0;
 }
 </style>

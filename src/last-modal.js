@@ -11,21 +11,40 @@ const defaultConfig = {
 
 const LastModal = {
   install(Vue, config = {}) {
-    let sequence = 0
+    if (this.installed) {
+      return
+    }
 
     config = Object.assign({}, defaultConfig, config)
 
-    Vue.component(ModalStack.name, ModalStack)
+    this.installed = true
+    this.bus = new Vue()
+
     Vue.component(ModalLayout.name, ModalLayout)
 
+    const initModalStackContainer = (parent) => {
+      if (!this.container) {
+        this.container = document.createElement('div')
+        document.body.appendChild(this.container)
+
+        new Vue({
+          parent,
+          render: h => h(ModalStack)
+        }).$mount(this.container)
+      }
+
+      return this.container
+    }
+
     Vue.prototype.$modal = function(component, props = {}, inline = false) {
+      initModalStackContainer(this.$root)
+
       return new Promise(resolve => {
-        this.$root.$emit("lastModal.open", {
-            id: ++sequence,
-            component,
-            props,
-            resolve,
-            inline
+        LastModal.bus.$emit("open", {
+          component,
+          props,
+          resolve,
+          inline
         })
       });
     };
@@ -82,7 +101,7 @@ const LastModal = {
   }
 };
 
-// Auto-install when vue is found (eg. in browser via <script> tag)
+// Auto-install
 let GlobalVue = null;
 
 if (typeof window !== 'undefined') {

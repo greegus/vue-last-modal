@@ -1,32 +1,30 @@
 <template>
   <div id="app">
     <div class="container">
-    <div class="py-3 mt-3 mb-5 border-bottom">
-      <h1>Last Modal</h1>
+      <div class="py-3 mt-3 mb-5 border-bottom">
+        <h1>Last Modal</h1>
+      </div>
+
+      <button class="btn btn-secondary" @click="open()">
+        Open
+      </button>
+
+      <button class="btn btn-secondary" @click="openPlain()">
+        Open plain
+      </button>
+
+      <button class="btn btn-secondary" @click="alert()">
+        Alert
+      </button>
+
+      <button class="btn btn-secondary" @click="confirm()">
+        Confirm
+      </button>
+
+      <button class="btn btn-secondary" @click="openScrollable()">
+        Open scrollable
+      </button>
     </div>
-
-    <button class="btn btn-secondary" @click="open()">
-      Open
-    </button>
-
-    <button class="btn btn-secondary" @click="openPlain()">
-      Open plain
-    </button>
-
-    <button class="btn btn-secondary" @click="alert()">
-      Alert
-    </button>
-
-    <button class="btn btn-secondary" @click="confirm()">
-      Confirm
-    </button>
-
-    <button class="btn btn-secondary" @click="openScrollable()">
-      Open scrollable
-    </button>
-  </div>
-
-  <modal-stack />
   </div>
 </template>
 

@@ -1,10 +1,10 @@
 <template>
     <div class="ModalStack">
-      <transition name="backdrop">
+      <transition name="ModalStack__backdrop">
         <div class="ModalStack__backdrop" v-if="modals.length"/>
       </transition>
 
-      <transition-group name="modal">
+      <transition-group name="ModalStack__modal">
         <div v-for="modal in modals" class="ModalStack__modalWrapper" :key="modal.id" @click="closeByBackdropClick($event, modal)">
           <component
             class="ModalStack__modal"

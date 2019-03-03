@@ -2,7 +2,7 @@
   <modal-layout class="Dialog" width="480" :title="title" closer>
     {{ message }}
 
-    <template slot="footer">
+    <template slot="footer" v-if="buttons && buttons.length">
       <div class="Dialog__buttons">
         <span class="Dialog__buttonWrapper" v-for="(button, $index) in buttons" :key="$index">
           <button type="button" :class="button.className" @click="$emit('close', button.value)" >

@@ -36,7 +36,7 @@ export default {
       })
 
       if (hasKrakenBeenReleased) {
-	      console.log('The Kraken has been released!')
+        console.log('The Kraken has been released!')
       }
     }
   }
@@ -48,14 +48,14 @@ Your modal component then needs to be wrapped by provided `modal-layout` compone
 // ReleaseTheKrakenModal.vue
 
 <template>
-	<modal-layout title="Kraken releaser">
-		Should the mighty Kraken, named {{ krakenName }}, be released?
+  <modal-layout title="Kraken releaser">
+    Should the mighty Kraken, named {{ krakenName }}, be released?
 
-		<template slot="footer">
-			<button @click="cancel()">Nay!</button>
-			<button @click="submit()">Aye!</button>
-		</tempalte>
-	</modal-layout>
+    <template slot="footer">
+      <button @click="cancel()">Nay!</button>
+      <button @click="submit()">Aye!</button>
+    </tempalte>
+  </modal-layout>
 </template>
 
 export default {
@@ -116,8 +116,8 @@ export default {
   methods:  {
     async releaseTheKraken()  {
       const hasKrakenBeenReleased = await this.$dialog({
-		title: 'Kraken Releaser',
-		message: 'Should the mighty Kraken, named BooBoo, be released?',
+        title: 'Kraken Releaser',
+        message: 'Should the mighty Kraken, named BooBoo, be released?',
         buttons: [
           {
             label: 'Ney!',
@@ -149,6 +149,6 @@ await this.$dialog('Do you wish to continue?')
 - `title` (String) - Title of the dialog. Default: `undefined`.
 - `message` (String) - Text content of the dialog. Default: `undefined`.
 - `buttons` (Array) - An array of button options, by which the dialog's buttons are rendered. Button options are:
-	- `label` (String) - Label of the button.
-	- `value` (Mixed) - Returning value of a dialog after clicking the button.
-	- `className` (String) - Style class name applyed to this button.
+  - `label` (String) - Label of the button.
+  - `value` (Mixed) - Returning value of a dialog after clicking the button.
+  - `className` (String) - Style class name applyed to this button.

@@ -58,6 +58,7 @@ Your modal component then needs to be wrapped by provided `modal-layout` compone
   </modal-layout>
 </template>
 
+<script>
 export default {
   props: {
     krakenName: String
@@ -71,6 +72,7 @@ export default {
     }
   }
 }
+</script>
 ```
 You can then close the modal by emitting the `close` event, with `$event` object as the **return value** of your modal. The default return value is `undefined`.
 
@@ -93,6 +95,7 @@ This component provides basic functionality and template for your modals.
   </modal-layout>
 </template>
 
+<script>
 export default {
   methods: {
     waitForSomePromise(close) {
@@ -100,6 +103,7 @@ export default {
     }
   }
 }
+</script>
 ```
 
 ### Template slots

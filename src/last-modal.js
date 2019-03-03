@@ -6,7 +6,9 @@ const defaultConfig = {
   cancelLabel: 'Cancel',
   confirmLabel: 'OK',
   buttonClassName: 'btn btn-secondary',
-  primaryButtonClassName: 'btn btn-primary'
+  primaryButtonClassName: 'btn btn-primary',
+  backdropTransitionName: 'ModalStack__backdrop',
+  modalTransitionName: 'ModalStack__modal'
 }
 
 const LastModal = {
@@ -29,7 +31,7 @@ const LastModal = {
 
         new Vue({
           parent,
-          render: h => h(ModalStack)
+          render: h => h(ModalStack, { props: { config } })
         }).$mount(this.container)
       }
 

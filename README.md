@@ -20,10 +20,12 @@ Vue.use(LastModal, options)
 - `confirmLabel` (String) - Used in dialogs. Submit button label. Default: `OK`
 - `buttonClassName` (String) - Used in dialogs. Generated button style class.
 - `primaryButtonClassName` (String) - Used in dialogs. Generated primary button style class.
+- `backdropTransitionName` (String) - Name of a transition used by a `<transition>` component wrapping backdrop element
+- `modalTransitionName` (String) - Name of a transition used by a `<transition>` component wrapping every open modal element.
 
 
 ## Opening a custom modal
-You can open your modal component, and provide it with custom props, by calling `_vm.$modal` within your App context.
+You can open your modal component, and provide it with custom props, by calling `_vm.$modal(component[, options])` within your App context.
 
 ```javascript
 import ReleaseTheKrakenModal from './ReleaseTheKrakenModal.vue'
@@ -113,7 +115,7 @@ export default {
 - `footer` - Footer of the modal, suitable for placing some buttons.
 
 # Opening a dialog
-As a shorthand for opening a simple confirmation modal, you can use build-in component opened by calling `_vm.$dialog` within your App's context. Here is an full example:
+As a shorthand for opening a simple confirmation modal, you can use build-in component opened by calling `_vm.$dialog(options)` within your App's context. Here is an full example:
 
 ```javascript
 export default {
@@ -141,13 +143,6 @@ export default {
   }
 }
 ```
-
-By default, **confirmation** and **cancellation** buttons are present, returning `true` and `false` when clicked, with labels and style classes defined by the plugin's default options. So for a quick confirmation, you can simply call a shorthand opening the dialog as followed:
-
-```javascript
-await this.$dialog('Do you wish to continue?')
-```
-
 
 ### Options
 - `title` (String) - Title of the dialog. Default: `undefined`.

@@ -1,10 +1,10 @@
 <template>
     <div class="ModalStack">
-      <transition name="ModalStack__backdrop">
-        <div class="ModalStack__backdrop" v-if="modals.length"/>
+      <transition :name="config.backdropTransitionName">
+        <div class="ModalStack__backdrop" v-if="modals.length" />
       </transition>
 
-      <transition-group name="ModalStack__modal">
+      <transition-group :name="config.modalTransitionName">
         <div v-for="modal in modals" class="ModalStack__modalWrapper" :key="modal.id" @click="closeByBackdropClick($event, modal)">
           <component
             class="ModalStack__modal"
@@ -24,6 +24,12 @@ import LastModal from '../last-modal'
 
 export default {
   name: "modal-stack",
+
+  props: {
+    config: {
+      type: Object
+    }
+  },
 
   data() {
     return {

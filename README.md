@@ -54,7 +54,7 @@ Your modal component then needs to be wrapped by provided `modal-layout` compone
     <template slot="footer">
       <button @click="cancel()">Nay!</button>
       <button @click="submit()">Aye!</button>
-    </tempalte>
+    </template>
   </modal-layout>
 </template>
 

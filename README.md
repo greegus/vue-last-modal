@@ -1,6 +1,6 @@
 
 # Last Modal
-Minimalistic promise-based, programmatically-open, stackable and responsive component modals. The last modal plugin that you would ever need.
+Minimalistic promise-based, programmatically-open, stackable and responsive component modals.
 
 ## Installation
 Install the package

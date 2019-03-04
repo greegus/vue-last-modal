@@ -18,8 +18,8 @@ Vue.use(LastModal, options)
 ### Options
 - `cancelLabel` (String) - Used in dialogs. Cancel button label. Default: `Cancel`
 - `confirmLabel` (String) - Used in dialogs. Submit button label. Default: `OK`
-- `buttonClassName` (String) - Used in dialogs. Generated button style class.
-- `primaryButtonClassName` (String) - Used in dialogs. Generated primary button style class.
+- `buttonClassName` (String) - Used in dialogs. Generated button style class. Default: `btn btn-secondary`
+- `primaryButtonClassName` (String) - Used in dialogs. Generated primary button style class. Default: `btn btn-primary`
 - `backdropTransitionName` (String) - Name of a transition used by a `<transition>` component wrapping backdrop element
 - `modalTransitionName` (String) - Name of a transition used by a `<transition>` component wrapping every open modal element.
 

@@ -60,12 +60,12 @@ export default {
 
       const closingRoutine = () => {
         this.modals = this.modals.filter(({id}) => id !== modal.id)
-        modal.resolve(result)
+        modal && modal.resolve(result)
       }
 
       const modalInstance = this._getModalInstance(modal)
 
-      if ('before-close' in modalInstance.$listeners) {
+      if (modalInstance && 'before-close' in modalInstance.$listeners) {
         modalInstance.$emit('before-close', closingRoutine)
       } else {
         closingRoutine()

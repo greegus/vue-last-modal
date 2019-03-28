@@ -1,7 +1,7 @@
 {
   "name": "vue-last-modal",
   "description": "Minimalistic promise-based, programmatically-opening & stacking modal plugin for Vue.js.",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "main": "dist/last-modal.umd.min.js",
   "repository": {
     "type": "git",

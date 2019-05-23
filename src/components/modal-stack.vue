@@ -170,20 +170,24 @@ export default {
 .ModalStack__modal-enter-active,
 .ModalStack__modal-leave-active {
   transition: opacity 0.25s;
+  pointer-events: none;
 }
 
 .ModalStack__modal-enter,
 .ModalStack__modal-leave-to {
   opacity: 0;
+  pointer-events: none;
 }
 
 .ModalStack__backdrop-enter-active,
 .ModalStack__backdrop-leave-active {
   transition: opacity 0.25s;
+  pointer-events: none;
 }
 
 .ModalStack__backdrop-enter,
 .ModalStack__backdrop-leave-to {
   opacity: 0;
+  pointer-events: none;
 }
 </style>

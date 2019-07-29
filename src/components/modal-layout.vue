@@ -143,6 +143,7 @@ export default {
   flex: 0 0 auto;
   padding: 1.5rem;
   border-radius: 4px;
+  flex-grow: 1;
 }
 
 .ModalLayout.hasHeader .ModalLayout__body {

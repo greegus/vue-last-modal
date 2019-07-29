@@ -114,7 +114,7 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .ModalStack {
   position: fixed;
   z-index: 1050;

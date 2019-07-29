@@ -79,7 +79,7 @@ export default {
 };
 </script>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .ModalLayout {
   position: relative;
 
@@ -140,10 +140,9 @@ export default {
 }
 
 .ModalLayout__body {
-  flex: 0 0 auto;
+  flex: 1 0 auto;
   padding: 1.5rem;
   border-radius: 4px;
-  flex-grow: 1;
 }
 
 .ModalLayout.hasHeader .ModalLayout__body {

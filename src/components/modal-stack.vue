@@ -136,13 +136,14 @@ export default {
   z-index: 2;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
 
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
-  height: 100vh;
-  width: 100vw;
+  width: auto;
+  height: auto;
   padding: 1.5rem;
 
   overflow: auto;

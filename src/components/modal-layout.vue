@@ -101,6 +101,7 @@ export default {
 }
 
 .ModalLayout__header {
+  flex: 0 0 auto;
   padding: 1.25rem 4rem 1.25rem 1.5rem;
 
   .ModalLayout.isPlain {
@@ -161,6 +162,10 @@ export default {
   flex: 1 1 auto;
   overflow: auto;
   padding: 1.5rem;
+
+  overscroll-behavior: contain;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .ModalLayout.isScrollable.hasHeader .ModalLayout__body {
